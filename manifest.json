@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Floating Meme",
+  "version": "1.0.0",
+  "description": "A playful floating GIF overlay for your browser — choose Lizard, Elmo, or upload your own!",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "48": "Assets/Logo/Product.png",
+      "128": "Assets/Logo/Product.png"
+    }
+  },
+  "icons": {
+    "48": "Assets/Logo/Product.png",
+    "128": "Assets/Logo/Product.png"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "Assets/Elmo/*",
+        "Assets/Lizard/*",
+        "Assets/Logo/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

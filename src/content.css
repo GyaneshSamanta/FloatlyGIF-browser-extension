@@ -1,0 +1,18 @@
+/* ─────────────────────────────────────────
+   Floating Meme – Content Script Styles
+   Overlay container for the floating GIF
+   ───────────────────────────────────────── */
+
+#floating-meme-container {
+  position: fixed;
+  z-index: 2147483647;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#floating-meme-container img {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}

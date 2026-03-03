@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Meme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <!-- ─── Header ─── -->
+    <header class="popup-header">
+      <img
+        src="../Assets/Logo/Product.png"
+        alt="Logo"
+        class="header-logo"
+        id="header-logo"
+      />
+      <span class="header-title">Gyanesh on Product</span>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- ─── Category Selection ─── -->
+    <section class="section">
+      <h2 class="section-title">Choose Your Meme</h2>
+      <div class="category-selector" id="category-selector">
+        <label class="category-option">
+          <input type="radio" name="category" value="lizard" checked />
+          <span class="category-label">
+            <span class="category-emoji">🦎</span>
+            Lizard
+          </span>
+        </label>
+        <label class="category-option">
+          <input type="radio" name="category" value="elmo" />
+          <span class="category-label">
+            <span class="category-emoji">🔥</span>
+            Elmo
+          </span>
+        </label>
+        <label class="category-option">
+          <input type="radio" name="category" value="custom" />
+          <span class="category-label">
+            <span class="category-emoji">📤</span>
+            Upload Custom
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <!-- ─── Custom Upload (hidden by default) ─── -->
+    <section
+      class="section upload-section"
+      id="upload-section"
+      style="display: none"
+    >
+      <div class="upload-area" id="upload-area">
+        <input type="file" id="gif-upload" accept=".gif,image/gif" hidden />
+        <div class="upload-placeholder" id="upload-placeholder">
+          <span class="upload-icon">🖼️</span>
+          <span class="upload-text">Click to upload a GIF</span>
+        </div>
+        <img
+          src=""
+          alt="Custom GIF Preview"
+          class="upload-preview"
+          id="upload-preview"
+          style="display: none"
+        />
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── Size Slider ─── -->
+    <section class="section">
+      <h2 class="section-title">GIF Size</h2>
+      <div class="slider-container">
+        <input
+          type="range"
+          id="size-slider"
+          min="50"
+          max="400"
+          value="150"
+          class="slider"
+        />
+        <div class="slider-labels">
+          <span class="slider-label-min">50px</span>
+          <span class="slider-value" id="size-value">150px</span>
+          <span class="slider-label-max">400px</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── Social Links ─── -->
+    <section class="section social-section">
+      <a
+        href="https://github.com/GyaneshSamanta"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        id="github-link"
+      >
+        <img src="../Assets/Logo/GitHub.jpg" alt="GitHub" class="social-icon" />
+        <span class="social-text">Follow for more on GitHub</span>
+        <span class="social-arrow">→</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/newsletters/gyanesh-on-product-6979386586404651008/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        id="linkedin-link"
+      >
+        <img
+          src="../Assets/Logo/LinkedIn.png"
+          alt="LinkedIn"
+          class="social-icon"
+        />
+        <span class="social-text">Follow for more on LinkedIn</span>
+        <span class="social-arrow">→</span>
+      </a>
+    </section>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
