@@ -1,4 +1,4 @@
-# 🦎 Lizard Browser Extension — Your GIF-Powered Web Companion
+# 🦎 FloatlyGIF Browser Extension — Your GIF-Powered Web Companion
 
 <p align="center">
   <img src="Assets/Lizard/FirstGif.gif" width="120" alt="Lizard Mascot" />
