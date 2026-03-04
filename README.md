@@ -1,88 +1,78 @@
-# 🦎 Floating Meme — Chrome Browser Extension
+# 🦎 Lizard Browser Extension — Your GIF-Powered Web Companion
 
-A playful Chrome extension that displays a floating animated GIF overlay inside the active browser window. Choose between built-in categories (**Lizard** or **Elmo**), upload your own custom GIF, and watch the animation adapt to your typing speed!
+A playful Chrome extension that displays dynamic, interactive animated GIFs as you browse. Watch as your favorite characters respond to your typing speed and stay engaged even when you're inactive!
 
 ---
 
 ## ✨ Features
 
-- **Floating GIF Overlay** — non-intrusive, decorative animation that floats above page content
-- **Built-in Categories** — Lizard 🦎 and Elmo 🔥 with 3 animation states each
-- **Custom GIF Upload** — use your own GIF with size customization
-- **Typing Speed Detection** — animation changes based on your WPM (words per minute)
-- **Inactivity Animation** — fun surprise animation when you stop interacting for 10 seconds
-- **Persistent Settings** — your preferences are saved via `chrome.storage`
-- **Zero Page Interference** — `pointer-events: none` ensures the GIF never blocks clicks
+- **🚀 Floating Overlays** — Non-intrusive, premium animations that float above your content.
+- **🦎 Smart Categories** — Choose between **Lizard** or **Elmo**, each with unique animation states.
+- **⚡ Performance Tracking** — Real-time typing speed (WPM) detection that triggers "high-speed" animations.
+- **🎁 Surprise Moments** — Fun inactivity triggers to keep the browsing experience alive.
+- **🎨 Custom GIF Support** — Upload your own favorites and customize their size to fit your style.
+- **💾 Persistent Settings** — Preferences saved automatically using `chrome.storage`.
 
 ---
 
-## 📁 Folder Structure
+## �️ Installation Guide
 
+Follow these simple steps to install the extension manually and start your GIF journey:
+
+### 1. Download the Extension
+Clone this repository to your local machine:
+```bash
+git clone https://github.com/GyaneshSamanta/Lizard-browser-extension.git
 ```
-Lizard-browser-extension/
-├── manifest.json              # Manifest V3 configuration
-├── Assets/
-│   ├── Elmo/
-│   │   ├── FirstGif.gif       # Intro animation
-│   │   ├── NormalSpeed.gif    # Default typing animation
-│   │   └── HighSpeed.gif      # Fast typing / inactivity animation
-│   ├── Lizard/
-│   │   ├── FirstGif.gif
-│   │   ├── NormalSpeed.gif
-│   │   └── HighSpeed.gif
-│   └── Logo/
-│       ├── Product.png        # Extension icon
-│       ├── GitHub.jpg
-│       └── LinkedIn.png
-└── src/
-    ├── popup.html             # Extension popup UI
-    ├── popup.css              # Popup styling
-    ├── popup.js               # Popup logic & storage
-    ├── content.js             # GIF overlay & typing detection
-    ├── content.css            # Overlay styling
-    └── background.js          # Service worker (defaults)
-```
+Alternatively, download the [source code as a ZIP](https://github.com/GyaneshSamanta/Lizard-browser-extension/archive/refs/heads/main.zip) and extract it.
 
----
+### 2. Open Chrome Extensions
+Navigate to the extensions manager by typing this in your address bar:
+`chrome://extensions/`
 
-## 🚀 How to Install
+### 3. Enable Developer Mode
+Toggle the **Developer mode** switch in the top-right corner to allow manual installs.
+![Enabling Developer Mode](Installation%20images/Enabling%20developer%20mode%20in%20chrome%20extensions.png)
 
-1. **Clone or download** this repository
-2. Open Chrome and navigate to `chrome://extensions`
-3. Enable **Developer mode** (toggle in the top-right corner)
-4. Click **Load unpacked**
-5. Select the root folder of this repository (`Lizard-browser-extension/`)
-6. The extension icon will appear in your toolbar — click it to open the popup!
+### 4. Load the Extension
+Click the **Load unpacked** button and select the root directory where you cloned/extracted the extension.
+![Load Unpacked](Installation%20images/load%20unpacked.png)
+
+*The extension is now installed! You can find the 🦎 icon in your toolbar.*
+
+### **Meet the Lizard 🦎**
+
+<p align="center">
+  <img src="Assets/Lizard/FirstGif.gif" width="300" alt="Lizard Intro" />
+  <img src="Assets/Lizard/NormalSpeed.gif" width="300" alt="Lizard Normal" />
+  <br />
+  <em>The Lizard in action — from a friendly hi to a focused browsing partner.</em>
+</p>
 
 ---
 
 ## 🎮 How It Works
 
-### Page Load Sequence
-1. When a page loads, the **intro GIF** (`FirstGif.gif`) plays once
-2. After ~3 seconds, it transitions to the **normal typing GIF** (`NormalSpeed.gif`)
+### **Adaptive Animations**
+| State | Preview | Behavior |
+| :--- | :---: | :--- |
+| **Intro** | ![Intro](Assets/Lizard/FirstGif.gif) | Plays a welcoming animation on page load. |
+| **Idle** | ![Idle](Assets/Lizard/NormalSpeed.gif) | Transitions to a calm, default GIF after 3 seconds. |
+| **Active** | ![High Speed](Assets/Lizard/HighSpeed.gif) | Detects typing speed. If > 40 WPM, a high-energy GIF appears! |
+| **Inactivity** | ![Inactivity](Assets/Lizard/HighSpeed.gif) | Shows a surprise animation if no activity is detected for 10 seconds. |
 
-### Typing Speed Detection
-- Measures your typing speed over a rolling 10-second window
-- If WPM > 40 → the **fast typing GIF** (`HighSpeed.gif`) flashes in a random right corner
-- If WPM ≤ 40 → the normal animation continues
-
-### Inactivity
-- If no keyboard or mouse activity for 10 seconds → a surprise GIF flash appears
-
-### Custom GIF Mode
-- Upload any `.gif` file via the popup
-- The custom GIF loops on page load with no typing detection
+### **Custom Content**
+Upload any GIF via the popup UI to replace the default animations with your own personalized loops.
 
 ---
 
-## 🛠 Technical Details
+## 🍵 Buy Me A Chai
 
-- **Manifest V3** — modern Chrome extension standard
-- **Content Scripts** — injected into every page via `document_idle`
-- **chrome.storage.local** — persists user preferences
-- **Performance** — debounced calculations, efficient intervals, proper cleanup on page unload
-- **No external libraries** — pure vanilla JavaScript
+If you're enjoying the 🦎 Lizard Browser Extension, consider supporting its development!
+
+Any proceeds from this will go directly towards purchasing a **Chrome Web Store Extension License**, allowing me to publish this officially for everyone to enjoy with a single click.
+
+[![Buy Me A Chai](https://buymeachai.ezee.li/assets/images/buymeachai-button.png)](https://buymeachai.ezee.li/GyaneshOnProduct)
 
 ---
 
@@ -92,3 +82,4 @@ Lizard-browser-extension/
 
 - [GitHub](https://github.com/GyaneshSamanta)
 - [LinkedIn — Gyanesh on Product](https://www.linkedin.com/newsletters/gyanesh-on-product-6979386586404651008/)
+- [Buy Me A Chai](https://buymeachai.ezee.li/GyaneshOnProduct)
