@@ -1,6 +1,29 @@
 # 🦎 Lizard Browser Extension — Your GIF-Powered Web Companion
 
-A playful Chrome extension that displays dynamic, interactive animated GIFs as you browse. Watch as your favorite characters respond to your typing speed and stay engaged even when you're inactive!
+<p align="center">
+  <img src="Assets/Lizard/FirstGif.gif" width="120" alt="Lizard Mascot" />
+  <br />
+  <a href="https://github.com/GyaneshSamanta/Lizard-browser-extension/releases/latest">
+    <img src="https://img.shields.io/github/v/release/GyaneshSamanta/Lizard-browser-extension?style=for-the-badge&color=green" alt="Latest Release" />
+  </a>
+  <a href="https://github.com/GyaneshSamanta/Lizard-browser-extension/releases">
+    <img src="https://img.shields.io/github/downloads/GyaneshSamanta/Lizard-browser-extension/total?style=for-the-badge&color=blue" alt="Total Downloads" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://buymeachai.ezee.li/GyaneshOnProduct">
+    <img src="https://buymeachai.ezee.li/assets/images/buymeachai-button.png" width="180" alt="Buy Me A Chai" />
+  </a>
+</p>
+
+---
+
+## 📖 Description
+
+**Lizard Browser Extension** is a playful, interactive companion for your Chrome browser. It brings personality to your workspace by displaying animated GIFs that react to your behavior in real-time. Whether you're typing at lightning speed or taking a well-deserved break, your chosen companion (Lizard or Elmo) will be there to cheer you on or keep you company with unique, high-quality animations.
+
+Designed to be non-intrusive yet delightful, this extension uses a "floating" overlay that stays out of your way while adding a touch of whimsy to every webpage you visit.
 
 ---
 
@@ -8,61 +31,58 @@ A playful Chrome extension that displays dynamic, interactive animated GIFs as y
 
 - **🚀 Floating Overlays** — Non-intrusive, premium animations that float above your content.
 - **🦎 Smart Categories** — Choose between **Lizard** or **Elmo**, each with unique animation states.
-- **⚡ Performance Tracking** — Real-time typing speed (WPM) detection that triggers "high-speed" animations.
+- **⚡ Performance Tracking** — Real-time typing speed (WPM) detection that triggers high-energy animations.
 - **🎁 Surprise Moments** — Fun inactivity triggers to keep the browsing experience alive.
 - **🎨 Custom GIF Support** — Upload your own favorites and customize their size to fit your style.
 - **💾 Persistent Settings** — Preferences saved automatically using `chrome.storage`.
 
 ---
 
-## �️ Installation Guide
+## 🎮 How It Works
 
-Follow these simple steps to install the extension manually and start your GIF journey:
+The extension features two built-in character sets, each with three distinct animation states based on your activity.
 
-### 1. Download the Extension
-Clone this repository to your local machine:
-```bash
-git clone https://github.com/GyaneshSamanta/Lizard-browser-extension.git
-```
-Alternatively, download the [source code as a ZIP](https://github.com/GyaneshSamanta/Lizard-browser-extension/archive/refs/heads/main.zip) and extract it.
+### **Character Showcases**
 
-### 2. Open Chrome Extensions
-Navigate to the extensions manager by typing this in your address bar:
-`chrome://extensions/`
-
-### 3. Enable Developer Mode
-Toggle the **Developer mode** switch in the top-right corner to allow manual installs.
-![Enabling Developer Mode](Installation%20images/Enabling%20developer%20mode%20in%20chrome%20extensions.png)
-
-### 4. Load the Extension
-Click the **Load unpacked** button and select the root directory where you cloned/extracted the extension.
-![Load Unpacked](Installation%20images/load%20unpacked.png)
-
-*The extension is now installed! You can find the 🦎 icon in your toolbar.*
-
-### **Meet the Lizard 🦎**
-
-<p align="center">
-  <img src="Assets/Lizard/FirstGif.gif" width="300" alt="Lizard Intro" />
-  <img src="Assets/Lizard/NormalSpeed.gif" width="300" alt="Lizard Normal" />
-  <br />
-  <em>The Lizard in action — from a friendly hi to a focused browsing partner.</em>
-</p>
+| State | Behavior | Lizard Preview | Elmo Preview |
+| :--- | :--- | :---: | :---: |
+| **Welcome** | Plays once when you load a new page. | <img src="Assets/Lizard/FirstGif.gif" width="100" /> | <img src="Assets/Elmo/FirstGif.gif" width="100" /> |
+| **Normal Speed** | Default animation for standard browsing/typing. | <img src="Assets/Lizard/NormalSpeed.gif" width="100" /> | <img src="Assets/Elmo/NormalSpeed.gif" width="100" /> |
+| **Fast Typing** | Triggers when your speed exceeds 40 WPM! | <img src="Assets/Lizard/HighSpeed.gif" width="100" /> | <img src="Assets/Elmo/HighSpeed.gif" width="100" /> |
 
 ---
 
-## 🎮 How It Works
+## 🛠️ Installation Guide
 
-### **Adaptive Animations**
-| State | Preview | Behavior |
-| :--- | :---: | :--- |
-| **Intro** | ![Intro](Assets/Lizard/FirstGif.gif) | Plays a welcoming animation on page load. |
-| **Idle** | ![Idle](Assets/Lizard/NormalSpeed.gif) | Transitions to a calm, default GIF after 3 seconds. |
-| **Active** | ![High Speed](Assets/Lizard/HighSpeed.gif) | Detects typing speed. If > 40 WPM, a high-energy GIF appears! |
-| **Inactivity** | ![Inactivity](Assets/Lizard/HighSpeed.gif) | Shows a surprise animation if no activity is detected for 10 seconds. |
+### **For Users (Easy Setup)**
+1. **Download the Release**: Go to the [Latest Release](https://github.com/GyaneshSamanta/Lizard-browser-extension/releases/latest) and download the `Source code (zip)`.
+2. **Extract the Folder**: Unzip the downloaded file to a location on your computer.
+3. **Open Chrome Extensions**: Type `chrome://extensions/` in your browser address bar.
+4. **Enable Developer Mode**: Toggle the switch in the top-right corner.
 
-### **Custom Content**
-Upload any GIF via the popup UI to replace the default animations with your own personalized loops.
+   <br />
+   
+   ![Enabling Developer Mode](Installation%20images/Enabling%20developer%20mode%20in%20chrome%20extensions.png)
+   
+   <br />
+
+5. **Load the Extension**: Click **Load unpacked** and select the folder you just extracted.
+   
+   <br />
+   
+   ![Load Unpacked](Installation%20images/load%20unpacked.png)
+
+---
+
+### **For Developers (Contribution)**
+If you want to modify the code or contribute to the project:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/GyaneshSamanta/Lizard-browser-extension.git
+   ```
+2. **Setup**: Follow steps 3-5 from the User Guide above, but select the cloned repository folder.
+3. **Modify**: Make changes to `src/` and refresh the extension in the Chrome Extensions page to see updates.
 
 ---
 
