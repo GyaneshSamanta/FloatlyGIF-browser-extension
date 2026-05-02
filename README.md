@@ -1,105 +1,94 @@
-# 🦎 FloatlyGIF Browser Extension — Your GIF-Powered Web Companion
+# FloatlyGIF — Your GIF-Powered Web Companion
+
+> **A playful Chrome extension that floats a reactive GIF mascot on every page — and speeds up when you do.**
 
 <p align="center">
-  <img src="Assets/Lizard/FirstGif.gif" width="120" alt="Lizard Mascot" />
-  <br />
-  <a href="https://github.com/GyaneshSamanta/Lizard-browser-extension/releases/latest">
-    <img src="https://img.shields.io/github/v/release/GyaneshSamanta/Lizard-browser-extension?style=for-the-badge&color=green" alt="Latest Release" />
-  </a>
-  <a href="https://github.com/GyaneshSamanta/Lizard-browser-extension/releases">
-    <img src="https://img.shields.io/github/downloads/GyaneshSamanta/Lizard-browser-extension/total?style=for-the-badge&color=blue" alt="Total Downloads" />
-  </a>
+  <img src="Assets/Lizard/FirstGif.gif" width="160" alt="Lizard Mascot" />
 </p>
 
-<p align="center">
-  <a href="https://buymeachai.ezee.li/GyaneshOnProduct">
-    <img src="https://buymeachai.ezee.li/assets/images/buymeachai-button.png" width="180" alt="Buy Me A Chai" />
-  </a>
-</p>
+![Manifest V3](https://img.shields.io/badge/Manifest-V3-4285F4?logo=googlechrome&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+[Latest release](https://github.com/GyaneshSamanta/FloatlyGIF-browser-extension/releases/latest) · [Buy Me A Chai](https://buymeachai.ezee.li/GyaneshOnProduct)
+
+## About
+
+- **What:** FloatlyGIF is a Chrome (Manifest V3) extension that overlays an animated, behavior-reactive GIF on every webpage. It tracks your typing speed and swaps animations between welcome, normal, and "you're typing fast" states.
+- **Who:** A solo project by Gyanesh Samanta — designer, developer, and chief Lizard wrangler.
+- **When:** Built and shipped in March 2026.
+- **Where:** Personal product project, distributed as an unpacked Chrome extension while a Web Store license is in the works.
+- **Why:** Browsing all day is lonely. A small mascot that reacts to *you* — your pace, your pauses — turns ordinary pages into something with a pulse, without getting in your way.
+
+## The Story
+
+Most browser extensions try to make you more productive. FloatlyGIF tries to make you smile. The premise is simple: pick a character (Lizard or Elmo), and as you browse, the extension floats a small GIF in the corner of every page. Open a fresh tab and you get a "welcome" animation. Settle into normal browsing and the mascot calms down. Crank past 40 WPM and it goes wild — a high-speed animation kicks in, rewarding the typing flow you didn't know you wanted celebrated.
+
+Under the hood it's a tight Manifest V3 extension: a content script injects the floating overlay and watches keystroke timing, a service worker mediates state, and `chrome.storage` persists your character pick and custom uploads. Bring your own GIFs if Lizard and Elmo aren't your speed.
+
+## Gallery
+
+| State | Lizard | Elmo |
+| :--- | :---: | :---: |
+| Welcome | <img src="Assets/Lizard/FirstGif.gif" width="100" /> | <img src="Assets/Elmo/FirstGif.gif" width="100" /> |
+| Normal | <img src="Assets/Lizard/NormalSpeed.gif" width="100" /> | <img src="Assets/Elmo/NormalSpeed.gif" width="100" /> |
+| Fast typing (40+ WPM) | <img src="Assets/Lizard/HighSpeed.gif" width="100" /> | <img src="Assets/Elmo/HighSpeed.gif" width="100" /> |
 
 ---
 
-## 📖 Description
+## Tech Stack
 
-**Lizard Browser Extension** is a playful, interactive companion for your Chrome browser. It brings personality to your workspace by displaying animated GIFs that react to your behavior in real-time. Whether you're typing at lightning speed or taking a well-deserved break, your chosen companion (Lizard or Elmo) will be there to cheer you on or keep you company with unique, high-quality animations.
+- **Platform:** Chrome Extensions, Manifest V3
+- **Language:** JavaScript (vanilla), HTML, CSS
+- **APIs:** `chrome.storage`, `chrome.tabs`, `activeTab`, content scripts, service worker
 
-Designed to be non-intrusive yet delightful, this extension uses a "floating" overlay that stays out of your way while adding a touch of whimsy to every webpage you visit.
+## Repo Structure
 
----
+```
+FloatlyGIF-browser-extension/
+├── manifest.json              # MV3 manifest
+├── src/
+│   ├── background.js          # Service worker
+│   ├── content.js / content.css   # Floating overlay + WPM tracker
+│   └── popup.html / popup.js / popup.css   # User UI
+├── Assets/
+│   ├── Lizard/                # Lizard animation states
+│   ├── Elmo/                  # Elmo animation states
+│   └── Logo/                  # Icons
+└── Installation images/
+```
 
-## ✨ Features
+## Getting Started
 
-- **🚀 Floating Overlays** — Non-intrusive, premium animations that float above your content.
-- **🦎 Smart Categories** — Choose between **Lizard** or **Elmo**, each with unique animation states.
-- **⚡ Performance Tracking** — Real-time typing speed (WPM) detection that triggers high-energy animations.
-- **🎁 Surprise Moments** — Fun inactivity triggers to keep the browsing experience alive.
-- **🎨 Custom GIF Support** — Upload your own favorites and customize their size to fit your style.
-- **💾 Persistent Settings** — Preferences saved automatically using `chrome.storage`.
+### For users
 
----
+1. Download the [latest release zip](https://github.com/GyaneshSamanta/FloatlyGIF-browser-extension/releases/latest) and unzip it.
+2. Visit `chrome://extensions/` and toggle **Developer mode** on (top right).
 
-## 🎮 How It Works
-
-The extension features two built-in character sets, each with three distinct animation states based on your activity.
-
-### **Character Showcases**
-
-| State | Behavior | Lizard Preview | Elmo Preview |
-| :--- | :--- | :---: | :---: |
-| **Welcome** | Plays once when you load a new page. | <img src="Assets/Lizard/FirstGif.gif" width="100" /> | <img src="Assets/Elmo/FirstGif.gif" width="100" /> |
-| **Normal Speed** | Default animation for standard browsing/typing. | <img src="Assets/Lizard/NormalSpeed.gif" width="100" /> | <img src="Assets/Elmo/NormalSpeed.gif" width="100" /> |
-| **Fast Typing** | Triggers when your speed exceeds 40 WPM! | <img src="Assets/Lizard/HighSpeed.gif" width="100" /> | <img src="Assets/Elmo/HighSpeed.gif" width="100" /> |
-
----
-
-## 🛠️ Installation Guide
-
-### **For Users (Easy Setup)**
-1. **Download the Release**: Go to the [Latest Release](https://github.com/GyaneshSamanta/Lizard-browser-extension/releases/latest) and download the `Source code (zip)`.
-2. **Extract the Folder**: Unzip the downloaded file to a location on your computer.
-3. **Open Chrome Extensions**: Type `chrome://extensions/` in your browser address bar.
-4. **Enable Developer Mode**: Toggle the switch in the top-right corner.
-
-   <br />
-   
    ![Enabling Developer Mode](Installation%20images/Enabling%20developer%20mode%20in%20chrome%20extensions.png)
-   
-   <br />
 
-5. **Load the Extension**: Click **Load unpacked** and select the folder you just extracted.
-   
-   <br />
-   
+3. Click **Load unpacked** and select the unzipped folder.
+
    ![Load Unpacked](Installation%20images/load%20unpacked.png)
 
----
+### For developers
 
-### **For Developers (Contribution)**
-If you want to modify the code or contribute to the project:
+```bash
+git clone https://github.com/GyaneshSamanta/FloatlyGIF-browser-extension.git
+```
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/GyaneshSamanta/Lizard-browser-extension.git
-   ```
-2. **Setup**: Follow steps 3-5 from the User Guide above, but select the cloned repository folder.
-3. **Modify**: Make changes to `src/` and refresh the extension in the Chrome Extensions page to see updates.
+Then **Load unpacked** the cloned folder. Edit files under `src/` and hit the reload icon on the extensions page to see your changes.
 
----
+## Contributing
 
-## 🍵 Buy Me A Chai
+Issues and PRs welcome. Good first contributions: new character packs, configurable WPM thresholds, dark-mode-aware overlay positioning.
 
-If you're enjoying the 🦎 Lizard Browser Extension, consider supporting its development!
+## License
 
-Any proceeds from this will go directly towards purchasing a **Chrome Web Store Extension License**, allowing me to publish this officially for everyone to enjoy with a single click.
+MIT — see manifest and project metadata. Mascot GIF assets are bundled for personal/non-commercial use.
 
-[![Buy Me A Chai](https://buymeachai.ezee.li/assets/images/buymeachai-button.png)](https://buymeachai.ezee.li/GyaneshOnProduct)
+## Credits
 
----
+**Author:** Gyanesh Samanta — [GitHub](https://github.com/GyaneshSamanta) · [LinkedIn newsletter](https://www.linkedin.com/newsletters/gyanesh-on-product-6979386586404651008/) · [Buy Me A Chai](https://buymeachai.ezee.li/GyaneshOnProduct)
 
-## 👤 Author
-
-**Gyanesh Samanta**
-
-- [GitHub](https://github.com/GyaneshSamanta)
-- [LinkedIn — Gyanesh on Product](https://www.linkedin.com/newsletters/gyanesh-on-product-6979386586404651008/)
-- [Buy Me A Chai](https://buymeachai.ezee.li/GyaneshOnProduct)
+If you enjoy the extension, the chai jar funds the Chrome Web Store developer license so this can ship as a one-click install.
